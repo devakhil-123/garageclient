@@ -7,6 +7,8 @@ import { Routes,Route } from 'react-router-dom'
 import './App.css'
 import Footer from './Components/Footer'
 import Header from './Components/Header'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
@@ -20,8 +22,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/customer' element={<Customer/>}/>
-        <Route path='/service' element={<Service/>}/>
+        <Route path='/service/:id' element={<Service/>}/>
       </Routes>
+      <ToastContainer/>
       <Footer/>
     </>
   )
