@@ -12,17 +12,26 @@ function Service() {
   useEffect(()=>{
     getData()
 
-  },[])
+  },[addServiceResponse])
+
+  const getData=async()=>{
+    const header={
+      "Content-Type":"application/json",
+      "Authorization":`Token${sessionStorage.getItem('token')}`
+    }
+
+  
 
 
 
-const getData = async()=>{
-  const result = await getSpecificCustomer(id)
+// const getData = async()=>{
+  const result = await getSpecificCustomer(id,header)
+
   if (result.status == 200)(
     setCustomer(result.data)
   )
   else (
-    console.log(customer)
+    console.log(result)
   )
 }
 console.log(customer)

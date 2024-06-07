@@ -9,6 +9,8 @@ import Footer from './Components/Footer'
 import Header from './Components/Header'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Reg from './pages/Reg'
+import Log from './pages/Log'
 
 function App() {
 
@@ -20,7 +22,10 @@ function App() {
     
       {/* <h1>Garageguru</h1> */}
       <Routes>
-        <Route path='/' element={<Home/>}/>
+        <Route path='/' element={<Log/>}/>
+        <Route path='/reg' element={<Reg/>}/>
+
+        <Route path='/home' element={<Home/>}/>
         <Route path='/customer' element={<Customer/>}/>
         <Route path='/service/:id' element={<Service/>}/>
       </Routes>
